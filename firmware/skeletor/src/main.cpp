@@ -210,7 +210,7 @@ void updateAnimation() {
   unsigned long now = millis();
   
   if (now - lastFrameChange >= ANIMATION_FRAME_TIME) {
-    // Cycle through animation frames: IDLE -> TALK1 -> TALK2 -> TALK1 -> IDLE
+    // Cycle through animation frames: IDLE -> TALK1 -> TALK2 -> IDLE
     switch(currentFrame) {
       case IDLE:
         currentFrame = TALK1;

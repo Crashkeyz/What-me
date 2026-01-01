@@ -39,10 +39,10 @@ echo "Firmware build successful!"
 
 # Build data filesystem image
 echo "Building data filesystem..."
-if pio run -e cardputer-adv -t buildfs 2>&1 | grep -q "success\|Successfully"; then
+if pio run -e cardputer-adv -t buildfs; then
     echo "Filesystem build successful!"
 else
-    echo "Warning: Filesystem build may have issues, continuing..."
+    echo "Warning: Filesystem build failed or not supported, continuing..."
 fi
 
 # Create output directory for packaging

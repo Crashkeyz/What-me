@@ -1,0 +1,79 @@
+name: PlatformIO Build - Skeletor Firmware
+
+on:
+  push:
+    branches:
+      - main
+      - 'feat/**'
+    paths:
+      - 'firmware/skeletor/**'
+      - '.github/workflows/pio-build.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'firmware/skeletor/**'
+      - '.github/workflows/pio-build.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      
+      - name: Cache PlatformIO
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.platformio
+            ~/.cache/pip
+          key: ${{ runner.os }}-pio-${{ hashFiles('**/platformio.ini') }}
+          restore-keys: |
+            ${{ runner.os }}-pio-
+      
+      - name: Install PlatformIO
+        run: |
+          pip install -U platformio
+          pio --version
+      
+      - name: Install library dependencies
+        working-directory: firmware/skeletor
+        run: pio pkg install
+      
+      - name: Build firmware
+        working-directory: firmware/skeletor
+        run: pio run -e cardputer-adv
+      
+      - name: Build filesystem image
+        working-directory: firmware/skeletor
+        run: pio run -e cardputer-adv -t buildfs || echo "Filesystem build optional, continuing..."
+      
+      - name: List build artifacts
+        working-directory: firmware/skeletor
+        run: |
+          echo "Build artifacts:"
+          ls -lah .pio/build/cardputer-adv/
+      
+      - name: Upload firmware binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: skeletor-firmware
+          path: |
+            firmware/skeletor/.pio/build/cardputer-adv/firmware.bin
+            firmware/skeletor/.pio/build/cardputer-adv/firmware.elf
+          retention-days: 30
+      
+      - name: Upload partitions (if exists)
+        uses: actions/upload-artifact@v4
+        if: hashFiles('firmware/skeletor/.pio/build/cardputer-adv/partitions.bin') != ''
+        with:
+          name: skeletor-partitions
+          path: firmware/skeletor/.pio/build/cardputer-adv/partitions.bin
+          retention-days: 30

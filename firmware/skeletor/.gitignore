@@ -1,0 +1,13 @@
+# PlatformIO
+/.pio
+/.vscode
+
+# Secrets
+/src/secrets.h
+
+# Build artifacts
+*.bin
+*.zip
+
+# OS files
+.DS_Store

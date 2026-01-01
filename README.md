@@ -86,7 +86,7 @@ https://github.com/7h30th3r0n3/Evil-M5Project/wiki
 
 ### 📦 Required Extras
 
-- **SD Card** (FAT32, SDHC, max 16Go – 8Go is already enough)
+- **SD Card** (FAT32, SDHC, max 16GB – 8GB is already enough)
 - **GPS Module**: [M5Stack](https://shop.m5stack.com/products/gps-bds-unit-with-sma-antenna-at6668) / [DIY](https://s.click.aliexpress.com/e/_oB7Yknf)
 
 ---
@@ -120,7 +120,6 @@ Features may vary depending on the firmware/device you are using:
 | EAPOL/Deauth detection        | ✅                     | ✅                  | ✅ (No EAPOL)       | ❌                  | ❌              |
 | Wall Of Flipper               | ✅                     | ✅                  | ✅                  | ❌                  | ❌              |
 | Send tesla code with RFunit   | ✅                     | ❌                  | ❌                  | ❌                  | ❌              |
-| Wi-Fi Channel Visualizer      | ✅                     | ✅                  | ❌                  | ❌                  | ❌              |
 | Scan Network and port         | ✅                     | ✅                  | ❌                  | ❌                  | ❌              |
 | Full Network and port Scan    | ✅                     | ✅                  | ❌                  | ❌                  | ❌              |
 | SSH Shell                     | ✅                     | ❌                  | ❌                  | ❌                  | ❌              |
@@ -130,7 +129,7 @@ Features may vary depending on the firmware/device you are using:
 | Mouse Jiggler                 | ✅                     | ❌                  | ❌                  | ❌                  | ❌              |
 | BadUSB                        | ✅                     | ❌                  | ❌                  | ❌                  | ❌              |
 | WebUi BadUSB                  | ✅                     | ❌                  | ❌                  | ❌                  | ❌              |
-| Customing Theming             | ✅                     | ✅                  | ❌                  | ❌                  | ❌              |
+| Custom Theming                | ✅                     | ✅                  | ❌                  | ❌                  | ❌              |
 | Full Network Scan             | ✅                     | ✅                  | ❌                  | ❌                  | ❌              |
 | Reverse TCP Tunnel            | ✅                     | ✅                  | ❌                  | ❌                  | ❌              |
 | DHCP Starvation               | ✅                     | ✅                  | ❌                  | ❌                  | ❌              |
@@ -199,7 +198,7 @@ You can add multiple ESP32 devices to improve the accuracy and strength of the s
 
 - **AtomS3**: [Buy here](https://s.click.aliexpress.com/e/_DnDXSKJ)
 - **AtomS3 Lite**: [Buy here](https://s.click.aliexpress.com/e/_Dm0e95D)
-- **ESP32-C3** (with external antenna): [Buy here](https://s.click.aliexpress.com/e/_DD1yibp) (Be carefull to select sets WITH antenna)
+- **ESP32-C3** (with external antenna): [Buy here](https://s.click.aliexpress.com/e/_DD1yibp) (Be careful to select sets WITH antenna)
 - **WEMOS D1 Mini**: [Buy here](https://s.click.aliexpress.com/e/_DEWPrnz)
 - **ESP32 C5**: [Buy here](https://fr.aliexpress.com/item/1005009128201189.html)
 
@@ -209,7 +208,7 @@ You can add multiple ESP32 devices to improve the accuracy and strength of the s
 - **Channel Hopping**: Configure the ESP32 to scan on a specific channel or hop between selected channels.
 - **Better Signal Strength**: ESP32 devices with external antennas provide improved signal capture for long-range wardriving.
 - **Master-Slave Communication**: Use in combination with the **Cardputer** in wardriving master mode to aggregate and monitor data from multiple ESP32 slaves.
-- **GPS Integration**: The **Cardputer** witg GPS link SSID data with geographic coordinates and generate Wigle-compatible CSV files.
+- **GPS Integration**: The **Cardputer** with GPS link SSID data with geographic coordinates and generate Wigle-compatible CSV files.
 
 ### How it Works:
 
